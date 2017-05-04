@@ -18,7 +18,7 @@ if(isset($_POST["submit"])) {
 
   $uploadOk = 1;
   $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-  // Check if image file is a actual image or fake image
+  // Check if file is a actual file or fake fack
 
   $realname = $_FILES["fileToUpload"]["name"];
   $type = $_FILES["fileToUpload"]["type"];
@@ -51,7 +51,6 @@ if(isset($_GET["download"])) {
     // Pass the mimetype so the browser can open it
     header('Cache-control: private');
     header('Content-Type: ' . $fetch1['type']);
-    //header('Content-Disposition: attachment; filename="' . rawurlencode($fetch1['realname']) . '"');
     header('Content-Disposition: attachment; filename="' . ($fetch1['realname']) . '"');
     // Apache is sending Last Modified header, so we'll do it, too
     $modified=filemtime($filename);
